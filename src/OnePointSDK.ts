@@ -41,9 +41,17 @@ class List extends Base {
         });
     }
 
-    getItemById(itemId: string) { }
+    getItemById(itemId: string) { 
+        return this.doAction({
+            action: OnePoint_Actions.GET_LIST_ITEM,
+            payload: {
+                appName: this.appName,
+                listName: this.listName,
+                itemId
+            }
+        })
+    }
 
-    getItemByName(itemName: string) { }
 
     getItems(filter: ItemFilter = []) {
         return this.doAction({
