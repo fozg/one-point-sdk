@@ -13,6 +13,7 @@ var OnePoint_Actions;
     OnePoint_Actions["DELETE_LIST_ITEM"] = "OP.DELETE_LIST_ITEM";
     OnePoint_Actions["CREATE_LIST_ITEM"] = "OP.CREATE_LIST_ITEM";
     OnePoint_Actions["UPDATE_LIST_FIELDS"] = "OP.UPDATE_LIST_FIELDS";
+    OnePoint_Actions["UPDATE_LIST_ITEM"] = "OP.UPDATE_LIST_ITEM";
     OnePoint_Actions["UPDATE_LIST_PERMISSION"] = "OP.UPDATE_LIST_PERMISSION";
     OnePoint_Actions["CREATE_LIST"] = "OP.CREATE_LIST"; // create a list
 })(OnePoint_Actions = exports.OnePoint_Actions || (exports.OnePoint_Actions = {}));

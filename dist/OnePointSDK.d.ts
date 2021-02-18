@@ -16,7 +16,7 @@ declare class List extends Base {
     addItem(item: any): Promise<any>;
     getItemById(itemId: string): Promise<any>;
     getItems(filter?: ItemFilter): Promise<any>;
-    updateItem(itemId: string, item: any): void;
+    updateItem(itemId: string, item: any): Promise<any>;
     deleteItem(itemId: string): Promise<any>;
     shareItem(itemId: string): void;
 }

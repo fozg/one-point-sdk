@@ -51,7 +51,15 @@ class List extends Base {
             },
         });
     }
-    updateItem(itemId, item) { }
+    updateItem(itemId, item) {
+        return this.doAction({
+            action: action_define_1.OnePoint_Actions.UPDATE_LIST_ITEM,
+            payload: {
+                itemId,
+                item
+            }
+        });
+    }
     deleteItem(itemId) {
         return this.doAction({
             action: action_define_1.OnePoint_Actions.DELETE_LIST_ITEM,

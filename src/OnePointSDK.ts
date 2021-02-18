@@ -41,7 +41,7 @@ class List extends Base {
         });
     }
 
-    getItemById(itemId: string) { 
+    getItemById(itemId: string) {
         return this.doAction({
             action: OnePoint_Actions.GET_LIST_ITEM,
             payload: {
@@ -64,7 +64,15 @@ class List extends Base {
         });
     }
 
-    updateItem(itemId: string, item: any) { }
+    updateItem(itemId: string, item: any) {
+        return this.doAction({
+            action: OnePoint_Actions.UPDATE_LIST_ITEM,
+            payload: {
+                itemId,
+                item
+            }
+        })
+    }
 
     deleteItem(itemId: string) {
         return this.doAction({
