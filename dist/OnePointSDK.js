@@ -51,11 +51,12 @@ class List extends Base {
             },
         });
     }
-    updateItem(listId, itemId, item) {
+    updateItem(itemId, item) {
         return this.doAction({
             action: action_define_1.OnePoint_Actions.UPDATE_LIST_ITEM,
             payload: {
-                listId,
+                appName: this.appName,
+                listName: this.listName,
                 itemId,
                 item
             }
