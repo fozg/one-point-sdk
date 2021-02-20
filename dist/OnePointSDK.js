@@ -132,13 +132,13 @@ class OnePoint {
         return this.onePointAPI.action(action_define_1.OnePoint_Actions.SHARE_ITEMS_PUBLIC).payload({
             itemIds,
             password
-        });
+        }).call();
     }
     getPublicItem(key, password) {
         return this.onePointAPI.actionPublic(action_define_1.OnePoint_Actions.PUBLIC_GET_PUBLIC_ITEM).payload({
             key,
             password
-        });
+        }).call();
     }
 }
 exports.OnePoint = OnePoint;

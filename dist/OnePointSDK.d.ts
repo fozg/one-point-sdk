@@ -37,11 +37,7 @@ export declare class OnePoint {
     createApp(name: string, displayName: string): Promise<any>;
     getListInfoById(listId: string): Promise<any>;
     quickAction(action: OnePoint_Actions, payload: any): Promise<any>;
-    shareItem(itemIds: string[], password?: string): {
-        call: () => Promise<any>;
-    };
-    getPublicItem(key: string, password?: string): {
-        call: () => Promise<any>;
-    };
+    shareItem(itemIds: string[], password?: string): Promise<any>;
+    getPublicItem(key: string, password?: string): Promise<any>;
 }
 export {};

@@ -163,12 +163,12 @@ export class OnePoint {
         return this.onePointAPI.action(OnePoint_Actions.SHARE_ITEMS_PUBLIC).payload({
             itemIds,
             password
-        })
+        }).call()
     }
     getPublicItem(key: string, password?: string) {
         return this.onePointAPI.actionPublic(OnePoint_Actions.PUBLIC_GET_PUBLIC_ITEM).payload({
             key,
             password
-        })
+        }).call()
     }
 }
