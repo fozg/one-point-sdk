@@ -42,9 +42,33 @@ class OnePointAPI {
             }
         });
     }
+    doPublicAction(action, payload) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                let result = yield axios_1.default.post(this.baseUrl + "/twohundred/p/twohundred", {
+                    action,
+                    payload,
+                });
+                return result.data;
+            }
+            catch (e) {
+                return {
+                    action,
+                    isError: true,
+                    message: e.message
+                };
+            }
+        });
+    }
     action(action) {
         return {
             payload: (payload) => ({ call: () => this.doAction(action, payload) }),
+            call: () => this.doAction(action)
+        };
+    }
+    actionPublic(action) {
+        return {
+            payload: (payload) => ({ call: () => this.doPublicAction(action, payload) }),
             call: () => this.doAction(action)
         };
     }

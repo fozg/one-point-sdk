@@ -11,5 +11,14 @@ export enum OnePoint_Actions {
     UPDATE_LIST_FIELDS = "OP.UPDATE_LIST_FIELDS",                      // update fields's list
     UPDATE_LIST_ITEM = "OP.UPDATE_LIST_ITEM",                          // update item
     UPDATE_LIST_PERMISSION = "OP.UPDATE_LIST_PERMISSION",              // update list permission,
-    CREATE_LIST = "OP.CREATE_LIST"                                     // create a list
+    CREATE_LIST = "OP.CREATE_LIST",                                     // create a list
+
+    SHARE_ITEMS_PUBLIC = "OP.SHARE_ITEMS_PUBLIC",                        // share item
+
+
+
+
+    // PUBLIC ACTION
+    PUBLIC_GET_PUBLIC_ITEM = "OP.PUBLIC.GET_SHARE_ITEM",
+
 }

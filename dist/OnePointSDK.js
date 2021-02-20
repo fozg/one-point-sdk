@@ -72,7 +72,6 @@ class List extends Base {
             }
         });
     }
-    shareItem(itemId) { }
 }
 class App extends Base {
     constructor(appName, onePointAPI) {
@@ -128,6 +127,18 @@ class OnePoint {
     }
     quickAction(action, payload) {
         return this.onePointAPI.action(action).payload(payload).call();
+    }
+    shareItem(itemIds, password) {
+        return this.onePointAPI.action(action_define_1.OnePoint_Actions.SHARE_ITEMS_PUBLIC).payload({
+            itemIds,
+            password
+        });
+    }
+    getPublicItem(key, password) {
+        return this.onePointAPI.actionPublic(action_define_1.OnePoint_Actions.PUBLIC_GET_PUBLIC_ITEM).payload({
+            key,
+            password
+        });
     }
 }
 exports.OnePoint = OnePoint;

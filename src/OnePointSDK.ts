@@ -87,7 +87,7 @@ class List extends Base {
         })
     }
 
-    shareItem(itemId: string) { }
+
 }
 
 export class App extends Base {
@@ -157,5 +157,18 @@ export class OnePoint {
 
     quickAction(action: OnePoint_Actions, payload: any) {
         return this.onePointAPI.action(action).payload(payload).call();
+    }
+
+    shareItem(itemIds: string[], password?: string) {
+        return this.onePointAPI.action(OnePoint_Actions.SHARE_ITEMS_PUBLIC).payload({
+            itemIds,
+            password
+        })
+    }
+    getPublicItem(key: string, password?: string) {
+        return this.onePointAPI.actionPublic(OnePoint_Actions.PUBLIC_GET_PUBLIC_ITEM).payload({
+            key,
+            password
+        })
     }
 }

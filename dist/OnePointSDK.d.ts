@@ -18,7 +18,6 @@ declare class List extends Base {
     getItems(filter?: ItemFilter): Promise<any>;
     updateItem(itemId: string, item: any): Promise<any>;
     deleteItem(itemId: string): Promise<any>;
-    shareItem(itemId: string): void;
 }
 export declare class App extends Base {
     private appName;
@@ -38,5 +37,11 @@ export declare class OnePoint {
     createApp(name: string, displayName: string): Promise<any>;
     getListInfoById(listId: string): Promise<any>;
     quickAction(action: OnePoint_Actions, payload: any): Promise<any>;
+    shareItem(itemIds: string[], password?: string): {
+        call: () => Promise<any>;
+    };
+    getPublicItem(key: string, password?: string): {
+        call: () => Promise<any>;
+    };
 }
 export {};

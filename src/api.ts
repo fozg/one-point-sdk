@@ -29,9 +29,34 @@ export class OnePointAPI {
         }
     }
 
+    private async doPublicAction(action: string, payload?: any) {
+        try {
+            let result = await axios.post(this.baseUrl + "/twohundred/p/twohundred", {
+                action,
+                payload,
+            })
+            return result.data
+        } catch (e) {
+            return {
+                action,
+                isError: true,
+                message: e.message
+            }
+        }
+    }
+
+
+
     public action(action: string) {
         return {
             payload: (payload: any) => ({ call: () => this.doAction(action, payload) }),
+            call: () => this.doAction(action)
+        }
+    }
+
+    public actionPublic(action: string) {
+        return {
+            payload: (payload: any) => ({ call: () => this.doPublicAction(action, payload) }),
             call: () => this.doAction(action)
         }
     }
