@@ -1,6 +1,4 @@
-import { OnePoint as OnePointSDK } from './OnePointSDK'
-import useFetch from './useFetch';
+import { OnePoint as OnePointSDK } from "./OnePointSDK";
 
 export default OnePointSDK;
-export { useFetch }
-export { OnePoint_Actions } from './action.define';
+export { OnePoint_Actions } from "./action.define";

@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "1Point JavaScript SDK",
   "main": "dist/index.js",
   "scripts": {
@@ -24,11 +24,7 @@
   "dependencies": {
     "axios": "^0.21.1"
   },
-  "peerDependencies": {
-    "react": "^16.0.0"
-  },
   "devDependencies": {
-    "@types/react": "^16.0.0",
     "@types/node": "^14.14.22"
   }
 }
