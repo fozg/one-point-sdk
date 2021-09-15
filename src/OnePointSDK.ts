@@ -30,13 +30,14 @@ class List extends Base {
         this.appName = appName;
     }
 
-    addItem(item: any) {
+    addItem(item: any, shareTeamsId?: string[]) {
         return this.doAction({
             action: OnePoint_Actions.CREATE_LIST_ITEM,
             payload: {
                 appName: this.appName,
                 listName: this.listName,
                 item: item,
+                shareTeamsId
             },
         });
     }
@@ -64,14 +65,15 @@ class List extends Base {
         });
     }
 
-    updateItem(itemId: string, item: any) {
+    updateItem(itemId: string, item: any, shareTeamsId?: string[]) {
         return this.doAction({
             action: OnePoint_Actions.UPDATE_LIST_ITEM,
             payload: {
                 appName: this.appName,
                 listName: this.listName,
                 itemId,
-                item
+                item,
+                shareTeamsId
             }
         })
     }
@@ -170,5 +172,21 @@ export class OnePoint {
             key,
             password
         }).call()
+    }
+    // teams
+    createTeam(name: string, description?: string): Promise<{ _id: string, name: string, description?: string, created: string, createdBy: string }> {
+        return this.onePointAPI.action(OnePoint_Actions.CREATE_TEAM).payload({
+            name,
+            description
+        }).call();
+    }
+    addTeamMember(teamId: string, username: string): Promise<{ _id: string, username: string, created: string, createdBy: string }> {
+        return this.onePointAPI.action(OnePoint_Actions.TEAM_ADD_MEMBER).payload({
+            teamId,
+            username
+        }).call();
+    }
+    getTeamsCurrentMember(): Promise<{ _id: string, name: string, description?: string, created: string, createdBy: string }[]> {
+        return this.onePointAPI.action(OnePoint_Actions.GET_TEAMS_CURRENTMEMBER).payload({}).call();
     }
 }

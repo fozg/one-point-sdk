@@ -13,11 +13,13 @@ export enum OnePoint_Actions {
     UPDATE_LIST_PERMISSION = "OP.UPDATE_LIST_PERMISSION",              // update list permission,
     CREATE_LIST = "OP.CREATE_LIST",                                     // create a list
 
+
+    CREATE_TEAM = "OP.CREATE_TEAM",
+    TEAM_ADD_MEMBER = "OP.TEAM_ADD_MEMBER",
+    GET_TEAMS_CURRENTMEMBER = "OP.GET_TEAMS_CURRENTMEMBER",   
+    
+    
     SHARE_ITEMS_PUBLIC = "OP.SHARE_ITEMS_PUBLIC",                        // share item
-
-
-
-
     // PUBLIC ACTION
     PUBLIC_GET_PUBLIC_ITEM = "OP.PUBLIC.GET_SHARE_ITEM",
 

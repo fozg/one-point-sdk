@@ -21,13 +21,14 @@ class List extends Base {
         this.listName = listName;
         this.appName = appName;
     }
-    addItem(item) {
+    addItem(item, shareTeamsId) {
         return this.doAction({
             action: action_define_1.OnePoint_Actions.CREATE_LIST_ITEM,
             payload: {
                 appName: this.appName,
                 listName: this.listName,
                 item: item,
+                shareTeamsId
             },
         });
     }
@@ -51,14 +52,15 @@ class List extends Base {
             },
         });
     }
-    updateItem(itemId, item) {
+    updateItem(itemId, item, shareTeamsId) {
         return this.doAction({
             action: action_define_1.OnePoint_Actions.UPDATE_LIST_ITEM,
             payload: {
                 appName: this.appName,
                 listName: this.listName,
                 itemId,
-                item
+                item,
+                shareTeamsId
             }
         });
     }
@@ -139,6 +141,22 @@ class OnePoint {
             key,
             password
         }).call();
+    }
+    // teams
+    createTeam(name, description) {
+        return this.onePointAPI.action(action_define_1.OnePoint_Actions.CREATE_TEAM).payload({
+            name,
+            description
+        }).call();
+    }
+    addTeamMember(teamId, username) {
+        return this.onePointAPI.action(action_define_1.OnePoint_Actions.TEAM_ADD_MEMBER).payload({
+            teamId,
+            username
+        }).call();
+    }
+    getTeamsCurrentMember() {
+        return this.onePointAPI.action(action_define_1.OnePoint_Actions.GET_TEAMS_CURRENTMEMBER).payload({}).call();
     }
 }
 exports.OnePoint = OnePoint;
