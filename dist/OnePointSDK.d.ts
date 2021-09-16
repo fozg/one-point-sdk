@@ -15,7 +15,7 @@ declare class List extends Base {
     constructor(appName: string, listName: string, onePointAPI: OnePointAPI);
     addItem(item: any, shareTeamsId?: string[]): Promise<any>;
     getItemById(itemId: string): Promise<any>;
-    getItems(filter?: ItemFilter): Promise<any>;
+    getItems(filter?: ItemFilter, teams?: string[]): Promise<any>;
     updateItem(itemId: string, item: any, shareTeamsId?: string[]): Promise<any>;
     deleteItem(itemId: string): Promise<any>;
 }

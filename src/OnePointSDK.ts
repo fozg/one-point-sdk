@@ -54,13 +54,14 @@ class List extends Base {
     }
 
 
-    getItems(filter: ItemFilter = []) {
+    getItems(filter: ItemFilter = [], teams?: string[]) {
         return this.doAction({
             action: OnePoint_Actions.GET_LIST_ITEMS,
             payload: {
                 appName: this.appName,
                 listName: this.listName,
                 filter,
+                teams
             },
         });
     }

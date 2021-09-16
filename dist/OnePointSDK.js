@@ -42,13 +42,14 @@ class List extends Base {
             }
         });
     }
-    getItems(filter = []) {
+    getItems(filter = [], teams) {
         return this.doAction({
             action: action_define_1.OnePoint_Actions.GET_LIST_ITEMS,
             payload: {
                 appName: this.appName,
                 listName: this.listName,
                 filter,
+                teams
             },
         });
     }
